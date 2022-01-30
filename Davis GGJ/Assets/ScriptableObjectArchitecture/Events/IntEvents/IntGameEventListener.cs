@@ -1,0 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class IntGameEventListener : GenericGameEventListener<int>
+{}
