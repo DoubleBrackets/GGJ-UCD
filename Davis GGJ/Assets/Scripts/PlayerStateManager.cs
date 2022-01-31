@@ -25,6 +25,7 @@ public class PlayerStateManager : MonoBehaviour
 
     private void Awake()
     {
+        currentState = PlayerState.walking;
         GetDependencies();
     }
 
@@ -39,7 +40,7 @@ public class PlayerStateManager : MonoBehaviour
         if (state == currentState)
             return;
         currentState = state;
-        switch(state)
+        switch (state)
         {
             case PlayerState.walking:
                 EnterWalkState();

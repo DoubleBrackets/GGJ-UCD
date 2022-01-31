@@ -7,6 +7,6 @@ public class BossEntity : Entity
 
     protected override void OnDeath()
     {
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
     }
 }

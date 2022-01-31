@@ -10,9 +10,9 @@ public class InputEventEditor : Editor
     {
         base.OnInspectorGUI();
 
-        GUI.enabled = Application.isPlaying;
 
         InputActionCallbackGameEvent e = target as InputActionCallbackGameEvent;
+        GUI.enabled = Application.isPlaying;
         if (GUILayout.Button("Raise"))
             e.Invoke(new InputAction.CallbackContext());
     }

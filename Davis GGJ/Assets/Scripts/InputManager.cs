@@ -34,6 +34,11 @@ public class InputManager : MonoBehaviour, MainInput.IPlayerInputActions
         mainInput.PlayerInput.SetCallbacks(this);
     }
 
+    private void OnDisable()
+    {
+        mainInput.Disable();
+    }
+
     public void OnMovement(InputAction.CallbackContext context)
     {
         MovementVector.Value = context.ReadValue<Vector2>();

@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public void TryJump()
     {
-        if(jumpTimer <= 0)
+        if(jumpTimer <= 0 && !isInDrift)
         {
             jumpTimer = 0.15f;
             PlayerCharacterController.Jump(JumpVel);

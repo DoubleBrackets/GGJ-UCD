@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class PlayerKillingThingLOL : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        var player = other.GetComponent<PlayerEntity>();
+        if(player != null)
+        {
+            player.TakeDamage(10000);
+        }
     }
 }

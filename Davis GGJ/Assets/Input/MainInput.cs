@@ -243,6 +243,17 @@ public partial class @MainInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6886ddea-064f-4150-81cd-6fd071ead3db"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleDriftState"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""f628390d-3c12-45de-8bba-34dda5b3832e"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",

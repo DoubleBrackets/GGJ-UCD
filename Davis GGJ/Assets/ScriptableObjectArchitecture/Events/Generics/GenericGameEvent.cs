@@ -14,6 +14,7 @@ public abstract class GenericGameEvent<T> : ScriptableObject
     [Multiline]
     public string DeveloperDescription = "";
 #endif
+    public int ListenerCount = 0;
 
     public void Invoke(T param)
     {
@@ -24,12 +25,18 @@ public abstract class GenericGameEvent<T> : ScriptableObject
     public void RegisterListener(GenericGameEventListener<T> listener)
     {
         if (!eventListeners.Contains(listener))
+        {
             eventListeners.Add(listener);
+            ListenerCount = eventListeners.Count;
+        }
     }
 
     public void UnregisterListener(GenericGameEventListener<T> listener)
     {
         if (eventListeners.Contains(listener))
+        {
             eventListeners.Remove(listener);
+            ListenerCount = eventListeners.Count;
+        }
     }
 }

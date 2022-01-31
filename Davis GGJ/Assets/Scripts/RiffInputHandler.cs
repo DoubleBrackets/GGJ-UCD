@@ -12,8 +12,18 @@ public class RiffInputHandler : MonoBehaviour
 
     private int octave = 0;
 
+    private float strumTimer = 0f;
+
+    private void Update()
+    {
+        strumTimer -= Time.deltaTime;
+    }
+
     public void Strum()
     {
+        if (strumTimer > 0f)
+            return;
+        strumTimer = 0.2f;
         for(int i = 0;i < LHBindings.Length;i++)
         {
             if(LHBindings[i])
