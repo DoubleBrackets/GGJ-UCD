@@ -15,7 +15,6 @@ public class GameEvent : ScriptableObject
     [Multiline]
     public string DeveloperDescription = "";
 #endif
-    public int ListenerCount = 0;
 
     public void Invoke()
     {
@@ -26,19 +25,13 @@ public class GameEvent : ScriptableObject
     public void RegisterListener(GameEventListener listener)
     {
         if (!eventListeners.Contains(listener))
-        {
             eventListeners.Add(listener);
-            ListenerCount++;
-        }
     }
 
     public void UnregisterListener(GameEventListener listener)
     {
         if (eventListeners.Contains(listener))
-        {
             eventListeners.Remove(listener);
-            ListenerCount--;
-        }
     }
 
 

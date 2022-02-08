@@ -7,14 +7,13 @@ public abstract class GenericGameEvent<T> : ScriptableObject
     /// <summary>
     /// The list of listeners that this event will notify if it is raised.
     /// </summary>
-    private readonly List<GenericGameEventListener<T>> eventListeners =
+    public readonly List<GenericGameEventListener<T>> eventListeners =
         new List<GenericGameEventListener<T>>();
 
 #if UNITY_EDITOR
     [Multiline]
     public string DeveloperDescription = "";
 #endif
-    public int ListenerCount = 0;
 
     public void Invoke(T param)
     {
@@ -25,18 +24,12 @@ public abstract class GenericGameEvent<T> : ScriptableObject
     public void RegisterListener(GenericGameEventListener<T> listener)
     {
         if (!eventListeners.Contains(listener))
-        {
             eventListeners.Add(listener);
-            ListenerCount = eventListeners.Count;
-        }
     }
 
     public void UnregisterListener(GenericGameEventListener<T> listener)
     {
         if (eventListeners.Contains(listener))
-        {
             eventListeners.Remove(listener);
-            ListenerCount = eventListeners.Count;
-        }
     }
 }
